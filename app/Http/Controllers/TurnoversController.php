@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Turnover;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -14,7 +15,7 @@ class TurnoversController extends Controller {
      * @return Response
      */
     public function getIndex() {
-        dd('Turnovers');
+        return view('turnovers', ['turnovers' => Turnover::all()]);
     }
 
     /**
