@@ -30,10 +30,10 @@
                 datasets: [
                     {
                         label: "My First dataset",
-                        fillColor: "rgba(220,220,220,0.5)",
-                        strokeColor: "rgba(220,220,220,0.8)",
-                        highlightFill: "rgba(220,220,220,0.75)",
-                        highlightStroke: "rgba(220,220,220,1)",
+                        fillColor: "rgba(40, 11, 133, 0.5)",
+                        strokeColor: "rgba(220, 220, 220, 0.8)",
+                        highlightFill: "rgba(220, 220, 220, 0.75)",
+                        highlightStroke: "rgba(50, 50, 50, 0.5)",
                         data: serie
                     }
                 ]
@@ -42,7 +42,8 @@
                 scaleOverride : true,
                 scaleSteps : 10,
                 scaleStepWidth : 1000000,
-                scaleStartValue : 0
+                scaleStartValue : 0,
+                responsive : true
             };
             var ctx = document.getElementById("myChart").getContext("2d");
             var myNewChart = new Chart(ctx).Bar(data, options);
