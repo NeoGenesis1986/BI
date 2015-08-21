@@ -8,5 +8,4 @@ class Stock extends Model {
 
     protected $fillable = ['date', 'value'];
 
-
 }
