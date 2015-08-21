@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Credit;
 use Illuminate\Http\Request;
 
+use App\Stock;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class CreditsController extends Controller {
+class StocksController extends Controller {
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
     public function getIndex() {
-        return view('credits', ['credit' => Credit::orderBy('date', 'desc')->first()]);
+        return view('stocks', ['stocks' => Stock::orderBy('date')->get()]);
     }
 
     /**

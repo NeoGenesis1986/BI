@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
+        <meta charset="UTF-8">
         <title>Chiffre d'affaires</title>
         <script src="{{ URL::asset('js/Chart.min.js') }}"></script>
     </head>

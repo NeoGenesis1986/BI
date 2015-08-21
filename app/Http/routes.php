@@ -18,5 +18,6 @@
     Route::controllers([
         'turnovers' => 'TurnoversController',
         'banks' => 'BanksController',
-        'credits' => 'CreditsController'
+        'credits' => 'CreditsController',
+        'stocks' => 'StocksController'
     ]);
