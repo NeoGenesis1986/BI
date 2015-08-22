@@ -15,6 +15,8 @@
         return view('welcome');
     });
 
+    Route::get('/banks/jsonIndex', 'BanksController@jsonIndex');
+
     Route::controllers([
         'turnovers' => 'TurnoversController',
         'banks' => 'BanksController',

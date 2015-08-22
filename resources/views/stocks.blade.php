@@ -47,6 +47,7 @@
         //scaleSteps : 10,
         //scaleStepWidth : 1000000,
         //scaleStartValue : 0,
+        datasetFill: true,
         responsive : true
     };
     var ctx = document.getElementById("myChart").getContext("2d");

@@ -18,6 +18,10 @@ class BanksController extends Controller {
         return view('banks', ['banks' => Bank::distinct()->orderBy('date', 'desc')->groupBy('name')->get()]);
     }
 
+    public function jsonIndex() {
+        return json_encode(Bank::distinct()->orderBy('date', 'desc')->groupBy('name')->get());
+    }
+
     /**
      * Show the form for creating a new resource.
      *
