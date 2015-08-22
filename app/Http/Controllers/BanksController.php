@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Bank;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -14,7 +15,7 @@ class BanksController extends Controller {
      * @return Response
      */
     public function getIndex() {
-        dd('Banks');
+        return view('banks', ['banks' => Bank::distinct()->orderBy('date', 'desc')->groupBy('name')->get()]);
     }
 
     /**
