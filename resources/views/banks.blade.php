@@ -1,15 +1,13 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Banques</title>
+@extends('main_layout')
+@section('title') Banques @endsection
+@section('scripts')
     <script src="{{ URL::asset('js/raphael.min.js') }}"></script>
     <script src="{{ URL::asset('js/justgage.min.js') }}"></script>
     <script src="{{ URL::asset('js/number_format.js') }}"></script>
-</head>
-<body>
+@endsection
+@section('content')
 @foreach($banks as $bank)
-    <div id="myChart{{$bank->id}}" style="width: 80%; height: 300px; border: solid black 1px;"></div>
+    <div id="myChart{{$bank->id}}" style="width: 300px; height: 300px; display: inline-flex;"></div>
     <script>
         var g{{$bank->id}} = new JustGage({
             id: "myChart{{$bank->id}}",
@@ -33,5 +31,4 @@
         }
     </script>
 @endforeach
-</body>
-</html>
+@endsection
