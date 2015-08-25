@@ -15,6 +15,33 @@
         return view('welcome');
     });
 
+    Route::get('/dashboard', function() {
+        $rows = [];
+        $row = new App\Classes\Row();
+        $row->height = 400;
+        $items = [];
+
+        $item1 = new App\Classes\Item();
+        $item1->name = 'Item1';
+        $item1->nbColumns = 1;
+        $items[] = $item1;
+
+        $item2 = new App\Classes\Item();
+        $item2->name = 'Chiffre d\'affaires';
+        $item2->nbColumns = 2;
+        $items[] = $item2;
+
+        $item3 = new App\Classes\Item();
+        $item3->name = 'Item3';
+        $item3->nbColumns = 1;
+        $items[] = $item3;
+
+        $row->items = $items;
+        $rows[] = $row;
+
+       return view('dashboard', ['rows' => $rows]);
+    });
+
     Route::get('/banks/jsonIndex', 'BanksController@jsonIndex');
 
     Route::controllers([
