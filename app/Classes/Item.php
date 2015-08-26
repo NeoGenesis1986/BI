@@ -11,5 +11,6 @@ namespace App\Classes;
 
 class Item {
     public $nbColumns;
+    public $title;
     public $name;
 }

@@ -8,33 +8,78 @@
     <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('css/theme.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/style-responsive.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/font-awesome.min.css') }}" rel="stylesheet">
     @yield('scripts')
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">BI</a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <!--/.nav-collapse -->
+<section id="container">
+    <!--header start-->
+    <header class="header black-bg">
+        <div class="sidebar-toggle-box">
+            <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
         </div>
-    </nav>
-@yield('content')
+        <!--logo start-->
+        <a href="{{ URL::asset('dashboard') }}" class="logo"><b>BI</b></a>
+        <!--logo end-->
+        <div class="top-menu">
+            <ul class="nav pull-right top-menu">
+                <li><a class="logout" href="#">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    <!--header end-->
+    <!--sidebar start-->
+    <aside>
+        <div id="sidebar" class="nav-collapse ">
+            <!-- sidebar menu start-->
+            <ul class="sidebar-menu" id="nav-accordion">
+
+                <p class="centered"><a href="profile.html"><img src="{{ URL::asset('img/logo.png') }}" width="90%"></a></p>
+                <h5 class="centered">Palliser</h5>
+
+                <li class="mt">
+                    <a class="active" href="{{ URL::asset('dashboard') }}">
+                        <i class="fa fa-dashboard"></i>
+                        <span>Tableau de bord</span>
+                    </a>
+                </li>
+
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-desktop"></i>
+                        <span>Balence de paiement</span>
+                    </a>
+                    <ul class="sub">
+                        <li>&nbsp;</li>
+                        <li>Par Mois</li>
+                        <li><a href="general.html">Simple</a></li>
+                        <li><a href="buttons.html">Comparaison</a></li>
+                        <li><a href="panels.html">Différence</a></li>
+                        <li>&nbsp;</li>
+                        <li>Par Année</li>
+                        <li><a href="general.html">Simple</a></li>
+                        <li><a href="buttons.html">Comparaison</a></li>
+                        <li><a href="panels.html">Différence</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- sidebar menu end-->
+        </div>
+    </aside>
+    <!--sidebar end-->
+</section>
+<section id="main-content">
+    <section class="wrapper">
+        @yield('content')
+    </section>
+</section>
+
 <script src="{{ URL::asset('js/jquery.min.js') }}"></script>
 <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ URL::asset('js/jquery.dcjqaccordion.2.7.js') }}"></script>
+<script src="{{ URL::asset('js/jquery.scrollTo.min.js') }}"></script>
+<script src="{{ URL::asset('js/jquery.nicescroll.js') }}"></script>
+<script src="{{ URL::asset('js/common-scripts.js') }}"></script>
 </body>
 </html>

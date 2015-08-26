@@ -1,7 +1,7 @@
 @section('scripts')
     <script src="{{ URL::asset('js/Chart.min.js') }}"></script>
 @endsection
-<canvas id="myChart" style="width: 100%; height: 90%;"></canvas>
+<canvas id="myChart" style="width: 100%; height: 88%;"></canvas>
 <script>
     var serie = <?php
                         $values = '[';
@@ -33,12 +33,14 @@
         }]
     };
     var options = {
+        //scaleFontColor: "#FFFFFF",
         scaleOverride : true,
         scaleSteps : 10,
         scaleStepWidth : 1000000,
         scaleStartValue : 0,
         responsive : false
     };
+    //Chart.default.global.scaleFontColor = "#FFFFFF";
     var ctx = document.getElementById("myChart").getContext("2d");
     var myNewChart = new Chart(ctx).Bar(data, options);
 </script>
