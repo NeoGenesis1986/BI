@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     <title>@yield('title')</title>
     <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('css/theme.css') }}" rel="stylesheet">
@@ -35,8 +36,10 @@
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
 
-                <p class="centered"><a href="profile.html"><img src="{{ URL::asset('img/logo.png') }}" width="90%"></a></p>
-                <h5 class="centered">Palliser</h5>
+                <a href="{{ URL::asset('dashboard') }}">
+                    <p class="centered"><img src="{{ URL::asset('img/icon_logo.png') }}" width="64px"></p>
+                    <h5 class="centered">Palliser</h5>
+                </a>
 
                 <li class="mt">
                     <a class="active" href="{{ URL::asset('dashboard') }}">

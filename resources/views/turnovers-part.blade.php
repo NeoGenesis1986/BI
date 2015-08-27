@@ -1,6 +1,3 @@
-@section('scripts')
-    <script src="{{ URL::asset('js/Chart.min.js') }}"></script>
-@endsection
 <canvas id="myChart" style="width: 100%; height: 88%;"></canvas>
 <script>
     var serie = <?php
