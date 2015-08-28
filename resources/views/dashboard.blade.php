@@ -1,5 +1,5 @@
 @extends('main_layout')
-@section('title') Tableau de bords @endsection
+@section('title') Tableau de bord @endsection
 @section('scripts')
     <script src="{{ URL::asset('js/Chart.min.js') }}"></script>
     <script src="{{ URL::asset('js/raphael.min.js') }}"></script>
