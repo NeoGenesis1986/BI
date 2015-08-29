@@ -15,8 +15,8 @@ class DashboardController extends Controller {
      */
     public function getIndex() {
         $rows = [];
-        $row = new \App\Classes\Row();
-        $row->height = 400;
+        $row1 = new \App\Classes\Row();
+        $row1->height = 400;
         $items = [];
 
         $item1 = new \App\Classes\Item();
@@ -30,15 +30,32 @@ class DashboardController extends Controller {
         $item2->name = 'Chiffre d\'affaires';
 
         $item3 = new \App\Classes\Item();
-        $item3->title = 'Item3';
+        $item3->title = 'Solde Banque AB';
+        $item3->name = 'Banque AB';
         $item3->nbColumns = 1;
 
         $items[] = $item1;
         $items[] = $item2;
         $items[] = $item3;
 
-        $row->items = $items;
-        $rows[] = $row;
+        $row1->items = $items;
+
+
+        $row2 = new \App\Classes\Row();
+        $row2->height = 300;
+        $items2 = [];
+
+        $item4 = new \App\Classes\Item();
+        $item4->title = 'Crédit en jours' ;
+        $item4->name = 'Crédits';
+        $item4->nbColumns = 2;
+
+        $items2[] = $item4;
+
+        $row2->items = $items2;
+
+        $rows[] = $row1;
+        $rows[] = $row2;
 
         return view('dashboard', ['rows' => $rows]);
     }

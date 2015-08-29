@@ -1,7 +1,7 @@
-<div id="myChart{{ $bank->id }}" style="width: 100%; height: 100%;"></div>
+<div id="bankChart{{ $bank->id }}" style="width: 100%; height: 100%;"></div>
 <script>
     var g{{ $bank->id }} = new JustGage({
-        id: "myChart{{ $bank->id }}",
+        id: "bankChart{{ $bank->id }}",
         value: {{ $bank->value / 1000.0 }},
         min: 0,
         max: 3000,

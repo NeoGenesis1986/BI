@@ -84,5 +84,10 @@
 <script src="{{ URL::asset('js/jquery.scrollTo.min.js') }}"></script>
 <script src="{{ URL::asset('js/jquery.nicescroll.js') }}"></script>
 <script src="{{ URL::asset('js/common-scripts.js') }}"></script>
+<script>
+    $('document').ready(function() {
+        $('html').css('overflow', 'auto');
+    });
+</script>
 </body>
 </html>

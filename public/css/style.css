@@ -1,3 +1,6 @@
+.dashboard-row {
+    margin-bottom: 8px;
+}
 .dashboard-column {
     height: inherit;
     margin-bottom: 8px;

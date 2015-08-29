@@ -4,7 +4,15 @@
     <script src="{{ URL::asset('js/Chart.min.js') }}"></script>
 @endsection
 @section('content')
-<canvas id="myChart" style="width: 80%; height: 400px;"></canvas>
+<div class="row">
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+        <canvas id="myChart" style="height: 400px;"></canvas>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <h4>Légende</h4>
+        <div id="legendDiv"></div>
+    </div>
+</div>
 <script>
     var data = [{
            value: {{$credit->suivi00}},
@@ -24,7 +32,7 @@
         }, {
             value: {{$credit->suivi90}},
             color: "#00FF00",
-            highlight: "#00FFFF",
+            highlight: "#A1EFA1",
             label: "Suivis > 90"
         }
     ];
@@ -33,9 +41,11 @@
         //scaleSteps: 10,
         //scaleStepWidth: 1000000,
         //scaleStartValue: 0,
+        legendTemplate : "<ul style=\"padding-left: 16px;\" class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><i class=\"fa fa-square-o\" style=\"background-color:<%=segments[i].fillColor%>; color:<%=segments[i].fillColor%>; margin-right: 8px;\"></i><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>",
         responsive: true
     };
     var ctx = document.getElementById("myChart").getContext("2d");
     var myNewChart = new Chart(ctx).Pie(data, options);
+    document.getElementById('legendDiv').innerHTML = myNewChart.generateLegend();
 </script>
 @endsection
