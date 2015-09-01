@@ -35,6 +35,11 @@
                                     <h4>{{ $item->title }} = {{ number_format(($credits->suivi00 + $credits->suivi30 + $credits->suivi60 + $credits->suivi90) / 1000.0, 3, '.', ' ') }} K TND</h4>
                                 </div>
                                 @include('credits-part', ['credit' => $credits, 'size' => min(($row->height - 100), ($item->nbColumns * 150))])
+                            @elseif($item->name == 'Stock')
+                                <div class="grey-header">
+                                    <h4>{{ $item->title }}</h4>
+                                </div>
+                                @include('stocks-part', ['stocks' => \App\Stock::orderBy('date')->get()])
                             @endif
                         </div>
                     </div>

@@ -52,6 +52,13 @@ class DashboardController extends Controller {
 
         $items2[] = $item4;
 
+        $item5 = new \App\Classes\Item();
+        $item5->title = 'Stock' ;
+        $item5->name = 'Stock';
+        $item5->nbColumns = 2;
+
+        $items2[] = $item5;
+
         $row2->items = $items2;
 
         $rows[] = $row1;
