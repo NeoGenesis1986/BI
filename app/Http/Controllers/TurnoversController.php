@@ -18,6 +18,10 @@ class TurnoversController extends Controller {
         return view('turnovers', ['turnovers' => Turnover::all()]);
     }
 
+    public function jsonIndex() {
+        return response()->json(Turnover::select(['id', 'date', 'value'])->get());
+    }
+
     /**
      * Show the form for creating a new resource.
      *

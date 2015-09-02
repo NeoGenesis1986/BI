@@ -19,7 +19,7 @@ class BanksController extends Controller {
     }
 
     public function jsonIndex() {
-        return json_encode(Bank::distinct()->orderBy('date', 'desc')->groupBy('name')->get());
+        return response()->json(Bank::distinct()->orderBy('date', 'desc')->groupBy('name')->select(['id', 'name', 'date', 'value'])->get());
     }
 
     /**
