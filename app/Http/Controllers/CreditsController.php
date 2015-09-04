@@ -18,6 +18,10 @@ class CreditsController extends Controller {
         return view('credits', ['credit' => Credit::orderBy('date', 'desc')->first()]);
     }
 
+    public function jsonIndex() {
+        return response()->json(Credit::orderBy('date', 'desc')->select(['id', 'date', 'suivi00', 'suivi30', 'suivi60', 'suivi90'])->first());
+    }
+
     /**
      * Show the form for creating a new resource.
      *
