@@ -22,6 +22,7 @@
     Route::get('/banks/jsonIndex', 'BanksController@jsonIndex');
     Route::get('/turnovers/jsonIndex', 'TurnoversController@jsonIndex');
     Route::get('/credits/jsonIndex', 'CreditsController@jsonIndex');
+    Route::get('/stocks/jsonIndex', 'StocksController@jsonIndex');
 
     Route::controllers([
         'dashboard' => 'DashboardController',

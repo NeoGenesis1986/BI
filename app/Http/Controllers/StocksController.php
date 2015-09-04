@@ -18,6 +18,10 @@ class StocksController extends Controller {
         return view('stocks', ['stocks' => Stock::orderBy('date')->get()]);
     }
 
+    public function jsonIndex() {
+        return response()->json(Stock::orderBy('date')->select(['id', 'date', 'value'])->get());
+    }
+
     /**
      * Show the form for creating a new resource.
      *
