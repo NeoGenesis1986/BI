@@ -63,6 +63,7 @@ class DashboardController extends Controller {
 
         $row2->items = $items2;
 
+        //$rows[] = $row2;
         $rows[] = $row1;
         $rows[] = $row2;
 
