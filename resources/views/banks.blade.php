@@ -1,7 +1,9 @@
 @extends('main_layout')
 @section('title') Banques @endsection
 @section('scripts')
-
+    <script src="{{ URL::asset('js/raphael.min.js') }}"></script>
+    <script src="{{ URL::asset('js/justgage.min.js') }}"></script>
+    <script src="{{ URL::asset('js/number_format.js') }}"></script>
 @endsection
 @section('content')
 @foreach($banks as $bank)
